@@ -15,7 +15,8 @@ $street_name = trim($_POST['Street_Name']);
 $AptUnit = trim($_POST['AptUnit']);
 $Project = trim($_POST['Project']);
 
-$serverName = "ELPASO_NONPROD1-async-supp-db.us.erdb.accela.com,14332"; 
+//$serverName = "ELPASO_NONPROD1-async-supp-db.us.erdb.accela.com,14332"; 
+$serverName = "52.232.212.197,14332"; 
 $uid = "ERDB_ELPASO_NONPROD1_SUPP_01";   
 $pwd = "acc31aK9tlYL04B";  
 $databaseName = "ELPASO_NONPROD1";  
@@ -33,7 +34,7 @@ try{
 
 	$stmt2 = $db->query("select top(10) * FROM B1Permit");
 
-	echo "INSIDE OTHER QUERY";
+	echo "INSIDE OTHER QUERY <br><\n>";
 
 	While($row2 = $stmt2->fetch(PDO::FETCH_OBJ)){
 		echo "test";
