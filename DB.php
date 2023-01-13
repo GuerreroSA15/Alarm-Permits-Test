@@ -80,7 +80,15 @@ if (!empty($street_num) || !empty($street_name) || !empty($AptUnit) || !empty($P
 	//echo "Query Statement is: " . $tsql . "<br>\n";
 	//AND d.b1_str_name like '%BASSETT%'";
 
-		$stmt = sqlsrv_query($conn, $tsql);  
+	try{
+		$stmt = sqlsrv_query($conn, $tsql); 
+		echo "STATEMENT EXECUTED";
+	}	 
+
+	catch (Exception $e) {
+		echo $e->getMessage() . "\n";
+	}
+
 
 		if ( $stmt )  
 		{  
