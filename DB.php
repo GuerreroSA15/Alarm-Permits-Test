@@ -81,8 +81,8 @@ if (!empty($street_num) || !empty($street_name) || !empty($AptUnit) || !empty($P
 	//AND d.b1_str_name like '%BASSETT%'";
 
 	try{
+		echo "BEFORE STATEMENT";
 		$stmt = sqlsrv_query($conn, $tsql); 
-		echo "STATEMENT EXECUTED";
 	}	 
 
 	catch (Exception $e) {
