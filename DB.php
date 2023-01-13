@@ -23,7 +23,28 @@ $databaseName = "ELPASO_NONPROD1";
 $connectionInfo = array( "UID"=>$uid,                            
                          "PWD"=>$pwd,                            
                          "Database"=>$databaseName); 
-						 
+
+
+$DSN = "sqlsrv:server=tcp:{$serverName}; Database={$databaseName}";
+
+try{
+	$db = new PDO($DSN, $uid, $pwd);
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	$stmt2 = $db->query("select top(10) * FROM B1Permit");
+
+	echo "INSIDE OTHER QUERY";
+
+	While($row2 = $stmt2->fetch(PDO::FETCH_OBJ)){
+		echo "test";
+	}
+} catch (Exception $e) {
+	echo $e->getMessage() . "\n";
+}
+												  
+
+
+
 /* Connect using SQL Server Authentication. */  
 $conn = sqlsrv_connect( $serverName, $connectionInfo);  
 
